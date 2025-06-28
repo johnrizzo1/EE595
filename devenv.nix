@@ -1,34 +1,38 @@
 { pkgs, lib, config, inputs, ... }:
 
 {
+  name = "EE595";
+
   packages = with pkgs; [ 
     git
   ];
 
   languages.python.enable = true;
   languages.python.version = "3.12";
-  languages.python.uv.enable = true;
+  languages.python.poetry.enable = true;
+  # languages.python.uv.enable = true;
   languages.python.venv.enable = true;
-  languages.python.venv.quiet = true;
-  languages.python.venv.requirements = ''
-    alembic
-    datasets
-    huggingface_hub
-    jupyter
-    jupyterlab
-    keras
-    keras-cv
-    keras-hub
-    matplotlib
-    numpy
-    pandas
-    python-dotenv
-    seaborn
-    scikit-learn
-    sqlalchemy
-    tensorflow
-    torch
-  '';
+  # # languages.python.venv.quiet = true;
+  # languages.python.venv.requirements = ''
+  #   alembic
+  #   datasets
+  #   databento
+  #   huggingface_hub
+  #   jupyter
+  #   jupyterlab
+  #   keras
+  #   keras-cv
+  #   keras-hub
+  #   matplotlib
+  #   numpy
+  #   pandas
+  #   python-dotenv
+  #   scikit-learn
+  #   seaborn
+  #   sqlalchemy
+  #   tensorflow
+  #   torch
+  # '';
 
   dotenv.enable = true;
   dotenv.disableHint = true;
